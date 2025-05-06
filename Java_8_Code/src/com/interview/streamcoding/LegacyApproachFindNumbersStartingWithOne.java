@@ -40,9 +40,16 @@ public class LegacyApproachFindNumbersStartingWithOne {
         for (Integer num : numbers) {
             // Converts number to string and checks if it starts with "1"
             // Handles negative numbers by checking the second character
-            if (String.valueOf(num).startsWith("1") || 
-                (num < 0 && String.valueOf(num).charAt(1) == '1')) {
-                result.add(num); // Adds to result list if condition matches
+			/*
+			 * if (String.valueOf(num).startsWith("1") || (num < 0 &&
+			 * String.valueOf(num).charAt(1) == '1')) { result.add(num); // Adds to result
+			 * list if condition matches }
+			 */
+        	// OR
+        	// Convert number to string and check first character
+            String numStr = Math.abs(num) + ""; // Handle negative numbers
+            if (numStr.charAt(0) == '1') {
+                result.add(num);
             }
         }
 
